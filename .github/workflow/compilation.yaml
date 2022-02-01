@@ -1,0 +1,21 @@
+name: "Check compilation"
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  compilation:
+    name: compilation
+    runs-on: ubuntu-latest
+    uses: epitechcontent/epitest-docker:devel
+    steps:
+      - name: check our repository
+        with:
+          repository: octocat/my-private-repo
+          ref: v1.0
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          path: ./.github/actions/my-private-repo
+      - name: compile
+        run: make
