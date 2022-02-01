@@ -1,6 +1,6 @@
 name: Run tests
 
 on:
-  workflow-run:
+  workflow_run:
     workflows: ["Check compilation"]
     types: [requested]
