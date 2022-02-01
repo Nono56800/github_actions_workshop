@@ -7,10 +7,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-  steps:
-    - name: Docker image
-      uses: epitechcontent/epitest-docker:devel
-    - name: Check out repository
-      uses: actions/checkout@v2
-    - name: Build
-      run: make
+  compilation:
+    name: compilation
+    steps:
+      - name: Docker image
+        uses: epitechcontent/epitest-docker:devel
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Build
+        run: make
